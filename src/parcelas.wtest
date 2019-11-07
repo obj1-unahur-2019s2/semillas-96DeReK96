@@ -1,0 +1,25 @@
+import semillas.*
+import parcelas.*
+describe "parcelas" {
+	var parcela = new Parcela(ancho = 20, largo = 1, horasDeSolPorDia = 8)
+	
+	var soja = new Soja(anioDeObtencion = 2009, altura = 2)
+	var soja2 = new Soja(anioDeObtencion = 2009, altura = 3)
+	var soja3 = new Soja(anioDeObtencion = 2009, altura = 4)
+	var soja4 = new Soja(anioDeObtencion = 2009, altura = 5)
+	var soja5 = new Soja(anioDeObtencion = 2009, altura = 6)
+	
+	test "parcela" {
+		parcela.plantarUnaPlanta(soja)
+		parcela.plantarUnaPlanta(soja2)
+		parcela.plantarUnaPlanta(soja3)
+		parcela.plantarUnaPlanta(soja4)
+		parcela.plantarUnaPlanta(soja5)
+		assert.equals(20, parcela.superficie())
+		assert.equals(4, parcela.cantidadMaxDePlantasQueTolera())
+	
+	}
+	
+	
+	
+}
